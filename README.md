@@ -14,8 +14,7 @@ Installation
 
 Simply run:
 
-make
-make install
+make -s
 
 And you should be ready to go.
 
