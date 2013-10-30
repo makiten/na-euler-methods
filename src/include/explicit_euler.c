@@ -9,7 +9,7 @@
  ** approximations of ODEs using forward Euler.		**
  **							**
  *********************************************************/
-#include "explicit_euler.h"
+#include <explicit_euler.h>
 
 float* get_explicit_euler_seqn(int s, float* t, float x0, float h, int n) {
 	float *x;

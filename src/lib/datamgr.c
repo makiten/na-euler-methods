@@ -1,14 +1,15 @@
 /*********************************************************
- ** APPROXIMATION LIBRARY (apprlib.c)			**
+ ** APPROXIMATION LIBRARY (../lib/datamgr.c)			**
  *********************************************************
- ** @name	apprlib.c				**
- ** @header	apprlib.h				**
+ ** @name	../lib/datamgr.c				**
+ ** @header	../lib/datamgr.h				**
  ** @email	makiten@neonnightrider.com		**
  ** @description					**
  ** Library for approximation methods			**
  **							**
  *********************************************************/
-#include "apprlib.h"
+#include <datamgr.h>
+#define TOLER 0.00001
 
 float __exact(int s, float t) {
 	if (s < 0 || s > 5) {

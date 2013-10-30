@@ -7,7 +7,7 @@
  ** implicit_euler.c header file			**
  **							**
  *********************************************************/
-#include "apprlib.h"
+#include <datamgr.h>
 
 /* @function 
  * @param int, float*, float, float, int

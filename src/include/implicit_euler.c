@@ -9,7 +9,7 @@
  ** approximations of ODEs using backward Euler.	**
  **							**
  *********************************************************/
-#include "implicit_euler.h"
+#include <implicit_euler.h>
 
 float* get_implicit_euler_seqn(int s, float* t, float x0, float h, int n) {
 	float *x;

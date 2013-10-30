@@ -7,7 +7,7 @@
  ** explicit_euler.c header file			**
  **							**
  *********************************************************/
-#include "applib.h"
+#include <datamgr.h>
 
 /* @function 
  * @param int, float*, float, float, int

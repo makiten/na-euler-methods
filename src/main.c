@@ -11,7 +11,6 @@
 
 #include "explicit_euler.h"
 #include "implicit_euler.h"
-#define TOLER 0.00001
 
 int main (int argc, char** argv) {
 	float *x,*x0,*t, interval[2], h;

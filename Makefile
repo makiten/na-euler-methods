@@ -1,9 +1,27 @@
+#----------Macros-------------------------
+
+BASEDIR = ./src
+INCDIR = $(BASEDIR)/include
+LIBDIR = $(BASEDIR)/lib
+
+LIBS = -lm
+
+INCLUDES = -I$(BASEDIR) -I$(INCDIR) -I$(LIBDIR)
+
 CC=gcc
-CFLAGS=-Wall
+CCFLAGS=-Wall $(INCLUDES)
+
+#----------Dependencies-------------------
+
+SRC = $(INCDIR)/* $(LIBDIR)/* $(BASEDIR)/main.c
+
+OBJ = numerical-euler
+
+#----------Commands-----------------------
+
 CLEAN=rm -rf euler.log
-SOURCES=euler.c
-EXECUTABLE=euler
 MAKE=make -s
+
 all: install
 install:
 	uname=`uname`; \
@@ -16,6 +34,6 @@ install:
 			exit 1; \
 		fi \
 	fi
-	$(CC) $(CFLAGS) $(SOURCES) -o $(EXECUTABLE);
+	$(CC) $(CCFLAGS) $(LIBS) -o $(OBJ) $(SRC)
 clean:
-	$(CLEAN) $(EXECUTABLE)
+	$(CLEAN) $(OBJ)
