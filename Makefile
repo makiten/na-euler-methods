@@ -17,6 +17,10 @@ SRC = $(INCDIR)/* $(LIBDIR)/* $(BASEDIR)/main.c
 
 OBJ = numerical-euler
 
+#----------User info----------------------
+USER=$(shell whoami)
+GROUP=$(shell id -gn)
+
 #----------Commands-----------------------
 
 CLEAN=rm -rf euler.log
@@ -24,16 +28,12 @@ MAKE=make -s
 
 all: install
 install:
-	uname=`uname`; \
-	user=`whoami`; \
-	if test $$uname == "Darwin" ; \
-	then \
-		if test $$user != "root" ; \
-		then \
-			echo "You need to be root to run make."; \
-			exit 1; \
-		fi \
-	fi
+ifeq ($(shell uname), Darwin)
+	sudo $(CC) $(CCFLAGS) $(LIBS) -o $(OBJ) $(SRC)
+	sudo chown $(USER):$(GROUP) $(OBJ)
+else
 	$(CC) $(CCFLAGS) $(LIBS) -o $(OBJ) $(SRC)
+endif
+
 clean:
 	$(CLEAN) $(OBJ)

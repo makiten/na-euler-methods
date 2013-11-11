@@ -22,16 +22,15 @@ int main (int argc, char** argv) {
 	char buffer[100], *bufferEof;
 
 	/* Set the h value */
-	printf("Please input your step size (h): ");
-	fgets(buffer, sizeof(buffer), stdin);
-	h = strtof(buffer, &bufferEof);
-	printf("\n%f\n\n", h);
 	/* If the user input a bad value, make them repeat until it's correct. */
-	while (h <= 0) {
-		printf("Incorrect value for h. Please try again:\n");
+	do {
+		printf("Please input your step size (h): ");
 		fgets(buffer, sizeof(buffer), stdin);
 		h = strtof(buffer, &bufferEof);
-	}
+		if (h <= 0)
+			printf("Incorrect value for h. Please try again:\n");
+		printf("h = %f\n", h);
+	} while (h <= 0);
 
 	/* Set up the interval */
 	printf("Please set your lower bound for the interval: \n");
